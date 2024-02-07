@@ -47,9 +47,7 @@ public class CrptApi
         // проверка на то не привышает ли колличество запросов за единицу времени 
         if(COUNTER.get() >= maxCount)
         {
-            System.out.println("Greater");
             // по факту просто морозим потоки, которые пытаются отправить запрос
-            // не самая 
             while (true) 
             {
                 Thread.sleep(100);
@@ -82,7 +80,6 @@ public class CrptApi
         {
             lastResetTime = System.currentTimeMillis();
             COUNTER.set(0);
-            System.out.print("reset");
             return true;
         }
 
@@ -139,7 +136,7 @@ public class CrptApi
         System.out.println("\n AuthToken is" + token);
         try 
         {
-            Thread.currentThread().sleep(5000); // приостановка потока на секунду, тип симуляция отправки запроса
+            Thread.currentThread().sleep(5000); // приостановка потока на 5 секунд, тип симуляция отправки запроса
         } 
         catch (InterruptedException e) 
         {
