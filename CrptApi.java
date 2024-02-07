@@ -140,7 +140,7 @@ public class CrptApi
         System.out.println("\n AuthToken is" + token);
         try 
         {
-            Thread.currentThread().sleep(1000); // приостановка потока на секунду, тип симуляция отправки запроса
+            Thread.currentThread().sleep(5000); // приостановка потока на секунду, тип симуляция отправки запроса
         } 
         catch (InterruptedException e) 
         {
