@@ -43,7 +43,6 @@ public class CrptApi
         
         //проверка на то надо ли сбросить колличество запросов
         CheckRequestsReset();
-        System.out.println(" 1");
 
         // проверка на то не привышает ли колличество запросов за единицу времени 
         if(COUNTER.get() >= maxCount)
