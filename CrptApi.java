@@ -24,7 +24,7 @@ public class CrptApi
     private long lastResetTime; //Время последнего сброса счетчика
     private long timeLimit; // лимит времени для запросов
 
-    public CrptApi(int maxCount,
+    public CrptApi(int maxCount, // максимальное колличество запросов
                 TimeUnit timeUnit, //Указать промежуток времени
                 long duration // численно указать промежуток (TimeUnit - seconds, duration - ограничение по времени в секунах)
                 ) 
@@ -37,6 +37,7 @@ public class CrptApi
         
     }    
 
+    //Сам метод который было необходимо реализовать по заданию 
     // По заданию метод должен принимать документ и подпись, если я правмльно понял, это токен авторизации
     public void CreateRequest(Document document, String token) throws InterruptedException
     {
@@ -71,7 +72,11 @@ public class CrptApi
         //     "https://ismp.crpt.ru/api/v3/lk/documents/create");
         System.out.println(SendPostrequest(CreateJson(document), token));
     }
+    
+    
 
+    // далее начинаются вспомогательные методы
+    
     // проверка н ато необходимо ли сбрасывать колличество запросов
     // при необходимости сбрасывает
     private boolean CheckRequestsReset()
@@ -105,6 +110,7 @@ public class CrptApi
         return writer.toString();
     }
 
+    
     // метод для отправки post запросов 
     private String SendPostRequest(String json, String token, String url)
     {
